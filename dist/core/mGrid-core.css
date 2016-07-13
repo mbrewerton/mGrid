@@ -1,7 +1,18 @@
 /*
     mGrid - A simple SASS grid solution.
+
+    Compatibility:
+    - IE: 9
+    - Chrome: 4.0
+    - Firefox: 3.5
+    - Safari: 3.2
+
+    This is the lowest known versions of browsers that full functionality of mGrid-core will work with. mGrid-core is not fully tested on all browsers and you are using it at your own risk.
+    I do my best to constantly test new mGrid features across all browsers, but in the case that a bug has been missed, please be sure to raise it so it can be fixed.
 */
 /* #region Variable Init */
+/* #endregion */
+/* #region Mixins */
 /* #endregion */
 /* #region Container and Col_ setup */
 .container {
@@ -23,6 +34,26 @@
 
 [class*='col-']:not(:last-of-type) {
   padding-right: 10px; }
+
+/* #endregion */
+/* #region Display Classes */
+.vertical-align-middle {
+  position: relative;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.vertical-align-middle-absolute, .vertical-align-middle-abs {
+  position: absolute;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%); }
 
 /* #endregion */
 /* #region Initial Mobile / Desktop Queries */

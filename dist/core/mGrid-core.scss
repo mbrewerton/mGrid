@@ -1,22 +1,67 @@
 /*
     mGrid - A simple SASS grid solution.
+
+    Compatibility:
+    - IE: 9
+    - Chrome: 4.0
+    - Firefox: 3.5
+    - Safari: 3.2
+
+    This is the lowest known versions of browsers that full functionality of mGrid-core will work with. mGrid-core is not fully tested on all browsers and you are using it at your own risk.
+    I do my best to constantly test new mGrid features across all browsers, but in the case that a bug has been missed, please be sure to raise it so it can be fixed.
 */
 /* #region Variable Init */
 $padding-global: 20px;
-$lst-padding-margin-sizes: 
-    "padding" 5,
-    "padding" 10,
-    "padding" 15,
-    "padding" 20,
-    "margin" 5,
-    "margin" 10,
-    "margin" 15,
-    "margin" 20;
+$lst-padding-margin-sizes: "padding" 5, "padding" 10, "padding" 15, "padding" 20, "margin" 5, "margin" 10, "margin" 15, "margin" 20;
 $padding-xsm: nth(nth($lst-padding-margin-sizes, 1), 2) + px;
 $padding-sm: nth(nth($lst-padding-margin-sizes, 2), 2) + px;
 $padding-med: nth(nth($lst-padding-margin-sizes, 3), 2) + px;
 $padding-lg: nth(nth($lst-padding-margin-sizes, 4), 2) + px;
 $container: '.container';
+/* #endregion */
+
+/* #region Mixins */
+@mixin CreatePaddingMarginClass($class, $size) {
+    .#{$class + '-' + $size} {
+        #{$class}: $size + px;
+    }
+
+    .#{$class + '-top-' + $size} {
+        #{$class + '-top'}: $size + px;
+    }
+
+    .#{$class + '-right-' + $size} {
+        #{$class + '-right'}: $size + px;
+    }
+
+    .#{$class + '-bottom-' + $size} {
+        #{$class + '-bottom'}: $size + px;
+    }
+
+    .#{$class + '-left-' + $size} {
+        #{$class + '-left'}: $size + px;
+    }
+}
+
+@mixin Transform($transform) {
+    -moz-transform: $transform;
+    -ms-transform: $transform;
+    -o-transform: $transform;
+    -webkit-transform: $transform;
+    transform: $transform;
+}
+
+@mixin VerticalAlignMiddle($isAbsolute) {
+    @if $isAbsolute {
+        position: absolute;
+    }
+    @else {
+        position: relative;
+    }
+
+    top: 50%;
+    @include Transform(translateY(-50%));
+}
 /* #endregion */
 
 /* #region Container and Col_ setup */
@@ -47,6 +92,16 @@ $container: '.container';
     padding-right: 10px;
 }
 
+/* #endregion */
+
+/* #region Display Classes */
+.vertical-align-middle {
+    @include VerticalAlignMiddle(false);
+}
+
+.vertical-align-middle-absolute, .vertical-align-middle-abs {
+    @include VerticalAlignMiddle(true);
+}
 /* #endregion */
 
 /* #region Initial Mobile / Desktop Queries */
@@ -118,31 +173,9 @@ $container: '.container';
 }
 /* #endregion */
 
-@mixin CreatePaddingMarginClass($class, $size) {
-    .#{$class + '-' + $size} {        
-        #{$class}: $size + px;
-    }
-
-    .#{$class + '-top-' + $size} {
-        #{$class + '-top'}: $size + px;
-    }
-
-    .#{$class + '-right-' + $size} {
-        #{$class + '-right'}: $size + px;
-    }
-
-    .#{$class + '-bottom-' + $size} {
-        #{$class + '-bottom'}: $size + px;
-    }
-
-    .#{$class + '-left-' + $size} {
-        #{$class + '-left'}: $size + px;
-    }
-}
-
 /* #region Margin and Padding Classes */
 @each $size in $lst-padding-margin-sizes {
     $class: nth($size, 1);
-    @include CreatePaddingMarginClass($class, nth($size, 2));    
+    @include CreatePaddingMarginClass($class, nth($size, 2));
 }
 /* #endregion */
