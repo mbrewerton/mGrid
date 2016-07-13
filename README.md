@@ -4,6 +4,15 @@ mGrid is an extremely simple SASS grid system, free for anyone to use.
 
 In order to change the amount of padding in the SASS, simply edit the `$padding` variable at the top of the mGrid.scss file.
 
+## Compatibility:
+- IE: **9**
+- Chrome: **4.0**
+- Firefox: **3.5**
+- Safari: **3.2**
+
+**This is the lowest known versions of browsers that full functionality of mGrid-core will work with. mGrid-core is not fully tested on all browsers and you are using it at your own risk.
+I do my best to constantly test new mGrid features across all browsers, but in the case that a bug has been missed, please be sure to raise it so it can be fixed.**
+
 # How To Use
 
 To use the grid system, you simply need to create a parent container with the class `container` and then use the appropriate `col-` class. The grid uses a 12-column system, so `col-3` is 1/4 width, `col-6` is 1/2 width, `col-9` is 3/4 width and `col-12` is full width. The cols will fill the width of the *parent* container that they are in.
@@ -45,7 +54,7 @@ will create two rows. The first row will have a div taking up the first quarter,
 ## Helper Classes
 There are helper classes that you can use for purposes outside of the main grid `col-` system.
 
-#### `.padding-<size>` or `.padding-<loc>-<size>` / `.margin-<size>` or `.margin-<loc>-<size>`
+**`.padding-<size>`** or **`.padding-<loc>-<size>`** / **`.margin-<size>`** or **`.margin-<loc>-<size>`**
 To use the padding and margin helper classes, simply add it to your element to add the appropriate padding or margin. Here are some examples:
 
 ``` CSS
