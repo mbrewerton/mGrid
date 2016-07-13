@@ -11,9 +11,9 @@ In order to change the amount of padding in the SASS, simply edit the `$padding`
 - Safari: **3.2**
 
 **This is the lowest known versions of browsers that full functionality of mGrid-core will work with. mGrid-core is not fully tested on all browsers and you are using it at your own risk.
-I do my best to constantly test new mGrid features across all browsers, but in the case that a bug has been missed, please be sure to raise it so it can be fixed.
+I do my best to constantly test new mGrid features across all browsers, but in the case that a bug has been missed, please be sure to raise it so it can be fixed.**
 
-mGrid addons will have their own compatibility restraints. Please be sure to check the compatibility of an addon before you implement it.**
+**mGrid addons will have their own compatibility restraints. Please be sure to check the compatibility of an addon before you implement it.**
 
 # How To Use
 
