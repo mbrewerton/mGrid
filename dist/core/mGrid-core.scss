@@ -12,11 +12,10 @@ $lst-padding-margin-sizes:
     "margin" 10,
     "margin" 15,
     "margin" 20;
-$padding-list: ('$padding-xsm': 5px);
-$padding-sm: 10px;
-$padding-med: 15px;
-$padding-lg: 20px;
-$padding-xlg: 25px;
+$padding-xsm: nth(nth($lst-padding-margin-sizes, 1), 2) + px;
+$padding-sm: nth(nth($lst-padding-margin-sizes, 2), 2) + px;
+$padding-med: nth(nth($lst-padding-margin-sizes, 3), 2) + px;
+$padding-lg: nth(nth($lst-padding-margin-sizes, 4), 2) + px;
 $container: '.container';
 /* #endregion */
 
