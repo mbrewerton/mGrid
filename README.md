@@ -45,7 +45,7 @@ will create two rows. The first row will have a div taking up the first quarter,
 ## Helper Classes
 There are helper classes that you can use for purposes outside of the main grid `col_` system.
 
-### `.padding-<size>` or `.padding-<loc>-<size> / `.margin-<size>` or `.margin-<loc>-<size>`
+### `.padding-<size>` or `.padding-<loc>-<size>` / `.margin-<size>` or `.margin-<loc>-<size>`
 To use the padding and margin helper classes, simply add it to your element to add the appropriate padding or margin. Here are some examples:
 
 ``` CSS
