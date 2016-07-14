@@ -64,7 +64,7 @@ $container: '.container';
 }
 /* #endregion */
 
-/* #region Container and Col_ setup */
+/* #region Container and Col- setup */
 
 #{$container} {
     width: 100%;
@@ -86,6 +86,7 @@ $container: '.container';
 
 [class*='col-'] {
     float: left;
+    display: inline-block;
 }
 
 [class*='col-']:not(:last-of-type) {
@@ -101,6 +102,20 @@ $container: '.container';
 
 .vertical-align-middle-absolute, .vertical-align-middle-abs {
     @include VerticalAlignMiddle(true);
+}
+/* #endregion */
+
+/* #region Layout and Flow Classes */
+.row {
+    float: none;
+
+    &:not(:last-of-type) {
+        margin-bottom: $padding-global;
+    }
+
+    &::after {
+        clear:both;
+    }
 }
 /* #endregion */
 
@@ -123,53 +138,13 @@ $container: '.container';
 }
 
 @media (min-width: 468px) {
-    .col-1 {
-        width: 6.86666666667%;
+    @for $i from 1 through 12 {
+ 
+    .col-#{$i} { 
+        width: 100% / 12 * $i;
     }
-
-    .col-2 {
-        width: 15.3333333333%;
-    }
-
-    .col-3 {
-        width: 23.8%;
-    }
-
-    .col-4 {
-        width: 32.2666666667%;
-    }
-
-    .col-5 {
-        width: 40.7333333333%;
-    }
-
-    .col-6 {
-        width: 49.2%;
-    }
-
-    .col-7 {
-        width: 57.6666666667%;
-    }
-
-    .col-8 {
-        width: 66.1333333333%;
-    }
-
-    .col-9 {
-        width: 74.6%;
-    }
-
-    .col-10 {
-        width: 83.0666666667%;
-    }
-
-    .col-11 {
-        width: 91.5333333333%;
-    }
-
-    .col-12 {
-        width: 100%;
-    }
+ 
+}
 }
 /* #endregion */
 
